@@ -34,7 +34,7 @@ public class PlayerBehaviourScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Pick Up")) {
+        if (other.gameObject.CompareTag("Pick Up") && !GameController.isPlayerOne) {
             score += other.gameObject.GetComponent<CoinBehaviourScript>().valueCoin;
             Destroy(other.gameObject);
         }

@@ -8,6 +8,8 @@ public class CameraBehaviourScript : MonoBehaviour
     private GameObject player;
     public Vector3 offset;
 
+    public Vector3 oldPosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +23,18 @@ public class CameraBehaviourScript : MonoBehaviour
         } else { 
             offset = transform.position - player.transform.position;
         }
+
+        oldPosition = transform.position;
     } 
  
 
     // Update is called once per frame
     void LateUpdate()
     {
+
+        oldPosition = transform.position;
+
         transform.position = player.transform.position + offset;
+
     }
 }

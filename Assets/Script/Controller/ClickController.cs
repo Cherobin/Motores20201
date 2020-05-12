@@ -41,7 +41,7 @@ public class ClickController : MonoBehaviour
         }
 
         //CREATE
-        if (Input.GetButtonDown("Fire1") && !GameController.isPause)
+        if (Input.GetButtonDown("Fire1") && !GameController.isPause && GameController.isPlayerOne)
         {
             PutCoin(Input.mousePosition);
         }

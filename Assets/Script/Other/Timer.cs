@@ -5,9 +5,9 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
 
-    public float timer;
-    public bool isStart;
-    public float initValueTimer = 30;
+    private float timer;
+    private bool isStart;
+    private float initValueTimer = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -39,5 +39,15 @@ public class Timer : MonoBehaviour
     public void PauseTimer()
     {
         isStart = !isStart;
+    }
+
+    public void setTimer(float time)
+    {
+        timer = initValueTimer = time;
+    }
+
+    public float getTimer()
+    {
+        return timer;
     }
 }
