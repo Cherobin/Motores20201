@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CoinBehaviourScript : MonoBehaviour
-{
-
+{ 
     public int maxValueCoin = 1;
     public int valueCoin;
 

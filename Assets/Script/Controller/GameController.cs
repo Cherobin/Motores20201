@@ -20,6 +20,8 @@ public class GameController : MonoBehaviour
 
     private GameObject mainCoin;
 
+    public GameObject player;
+
     public int roundGame;
 
     void Start()
@@ -58,8 +60,14 @@ public class GameController : MonoBehaviour
         if (textStatusGame == null)
         {
             Debug.Log("textStatusGame is null in ->" + name);
-        } 
+        }
 
+        if (player == null)
+        {
+            Debug.Log("player is null in ->" + name);
+        }
+
+        
         PauseGame();
     }
 
@@ -95,6 +103,7 @@ public class GameController : MonoBehaviour
 
         roundGame = 1;
         ResetGame();
+        player.GetComponent<PlayerBehaviourScript>().saveInfo();
     }
 
 
@@ -111,6 +120,7 @@ public class GameController : MonoBehaviour
     {
         myTimer.StartTimer();
         Time.timeScale = timeScale;
+        player.GetComponent<PlayerBehaviourScript>().score = 0;
         isPause = false;
         textStatusGame.text = "";
     }
